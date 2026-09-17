@@ -6,9 +6,10 @@ applyTo: "**/*.md"
 
 # Bilder in Markdown-Dokumenten
 
-- Lege Bilder, die in einer Markdown-Dokumentation verwendet werden, in einem `media/`-Ordner neben der jeweiligen Markdown-Datei ab.
-- Verschiebe neu eingefügte oder am falschen Ort liegende Bilddateien in diesen `media/`-Ordner. Erstelle den Ordner, falls er noch nicht existiert.
-- Referenziere Bilder mit einem relativen Obsidian-Wikilink einschließlich des Ordners, zum Beispiel `![[media/Pasted image 20260917083750.png]]`.
-- Verwende keine absoluten Pfade und lasse verwendete Bilder nicht im Repository-Root oder in einem globalen Sammelordner liegen.
-- Behalte die Dateinamen der Bilder bei, sofern keine Umbenennung ausdrücklich gewünscht ist.
-- Prüfe nach der Änderung, dass jede Bildreferenz auf eine tatsächlich vorhandene Datei zeigt und keine veraltete Referenz zurückbleibt.
+- Ablage: `media/`-Ordner auf Modulebene (z. B. `HS26/INCO/media/`), eine Ebene über `unstructured/` und `summary/` — beide referenzieren von dort, keine Duplikate.
+- Neu eingefügte oder falsch abgelegte Bilder dorthin verschieben; Ordner bei Bedarf anlegen.
+- Referenz: relativer Obsidian-Wikilink inkl. Ordner, z. B. `![[../media/Pasted image 20260917083750.png]]`.
+- Keine absoluten Pfade, keine Bilder im Repo-Root oder Sammelordner.
+- Dateinamen beibehalten, ausser Umbenennung ist ausdrücklich gewünscht.
+- Unreferenziertes Bild (z. B. Duplikat) → nicht kommentarlos verschieben/löschen, erst nachfragen.
+- Nach jeder Änderung: Referenzen prüfen, keine toten/veralteten Links.

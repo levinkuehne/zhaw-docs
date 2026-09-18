@@ -22,6 +22,7 @@ Pro Modul (`HS26/<Modul>/`): `unstructured/`, `summary/`, `media/`.
 — Gross- und Kleinschreibung / Überschriften / Reihenfolge / Stil (Beispielsweise auch Listen, Tabellen, Formeln, Codeblöcke, Blockquotes) darf angepasst werden, wenn es der Lesbarkeit dient, aber keine Inhalte ändern.
 - Blockquotes nur als einfaches `>`, keine Callouts (kein `[!note]`/`[!tip]`/etc.) — Callouts sind `summary/` vorbehalten.
 - Bildpfade pflegen (siehe `media.instructions.md`).
+- Ausnahme von "Inhalt unangetastet": ein kompletter, unbeabsichtigter Neustart derselben Passage (z. B. Notiz-App fängt denselben Abschnitt nochmal von vorne an) darf entfernt werden, nur die spätere/sauberere Fassung bleibt. Nicht verwechseln mit bewusst unterschiedlichen Inhalten — im Zweifel nachfragen statt löschen.
 
 ## summary/
 

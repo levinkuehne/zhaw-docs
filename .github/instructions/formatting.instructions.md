@@ -20,7 +20,9 @@ Pro Modul (`HS26/<Modul>/`): `unstructured/`, `summary/`, `media/`.
   ```
 - Bildpfade pflegen (siehe `media.instructions.md`).
 - Inhalt unangetastet lassen!
+- Falls inhaltliche Fehler auffallen, im Chat darauf aufmerksam machen.
 - Angepasst werden darf:
+  - Schreibfehler
   — Gross- und Kleinschreibung
   - Überschriften
   - Reihenfolge, wo sinnvoll

@@ -11,5 +11,5 @@ applyTo: "**/*.md"
 - Referenz: relativer Obsidian-Wikilink inkl. Ordner, z. B. `![[../media/Pasted image 20260917083750.png]]`.
 - Keine absoluten Pfade, keine Bilder im Repo-Root oder Sammelordner.
 - Dateinamen beibehalten, ausser Umbenennung ist ausdrücklich gewünscht.
-- Unreferenziertes Bild (z. B. Duplikat) → nicht kommentarlos verschieben/löschen, erst nachfragen.
+- Unreferenziertes Bild (z. B. Duplikat) → können gelöscht werden
 - Nach jeder Änderung: Referenzen prüfen, keine toten/veralteten Links.

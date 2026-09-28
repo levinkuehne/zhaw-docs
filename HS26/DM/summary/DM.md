@@ -3,6 +3,87 @@
 > [!info] Kursseite
 > https://olodnad.gitlab.io/diskmathzhaw/
 
+## Spick: Symbolübersicht
+
+### Junktoren
+
+| Symbol  | Name        | Gesprochen             | Wahr, wenn …                                          | Mengen-Pendant        |
+| ------- | ----------- | ---------------------- | ----------------------------------------------------- | --------------------- |
+| ¬𝐴     | Negation    | nicht 𝐴               | 𝐴 falsch ist                                         | 𝐶 \ 𝐴 (Differenz)   |
+| 𝐴 ∧ 𝐵 | Konjunktion | 𝐴 und 𝐵              | beide wahr sind                                       | 𝐴 ∩ 𝐵 (Schnitt)     |
+| 𝐴 ∨ 𝐵 | Disjunktion | 𝐴 oder 𝐵             | mindestens eines wahr ist                             | 𝐴 ∪ 𝐵 (Vereinigung) |
+| 𝐴 ⇒ 𝐵 | Implikation | 𝐴 impliziert 𝐵       | ¬𝐴 ∨ 𝐵 wahr ist (nur falsch bei 𝐴 wahr, 𝐵 falsch) | 𝐴 ⊆ 𝐵 (Teilmenge)   |
+| 𝐴 ⇔ 𝐵 | Äquivalenz  | 𝐴 genau dann, wenn 𝐵 | beide denselben Wahrheitswert haben                   | 𝐴 = 𝐵 (Gleichheit)  |
+| :⇔ / := | Definition  | "ist definiert als"    | —                                                     | —                     |
+
+**Bindungsstärke**: ¬ > ∧, ∨ > ⇒, ⇔
+
+| 𝐴 | 𝐵 | ¬𝐴 | 𝐴 ∧ 𝐵 | 𝐴 ∨ 𝐵 | 𝐴 ⇒ 𝐵 | 𝐴 ⇔ 𝐵 |
+| --- | --- | --- | --- | --- | --- | --- |
+| w | w | f | w | w | w | w |
+| w | f | f | f | w | **f** | f |
+| f | w | w | f | w | w | f |
+| f | f | w | f | f | w | w |
+
+### Quantoren
+
+| Symbol | Name | Bedeutung | Wirkt wie |
+| --- | --- | --- | --- |
+| ∀𝑥 𝐴(𝑥) | Allquantor | für **alle** 𝑥 gilt 𝐴(𝑥) | grosses ∧ (Und über alle 𝑥) |
+| ∃𝑥 𝐴(𝑥) | Existenzquantor | es **existiert** (mind.) ein 𝑥 mit 𝐴(𝑥) | grosses ∨ (Oder über alle 𝑥) |
+| ∀𝑥 ∈ 𝑀 𝐴(𝑥) | eingeschränkt | ∀𝑥 (𝑥 ∈ 𝑀 **⇒** 𝐴(𝑥)) | 𝐴(𝑥₁) ∧ … ∧ 𝐴(𝑥ₙ) |
+| ∃𝑥 ∈ 𝑀 𝐴(𝑥) | eingeschränkt | ∃𝑥 (𝑥 ∈ 𝑀 **∧** 𝐴(𝑥)) | 𝐴(𝑥₁) ∨ … ∨ 𝐴(𝑥ₙ) |
+
+- **Negation**: ¬∀𝑥 𝐴(𝑥) ⇔ ∃𝑥 ¬𝐴(𝑥) und ¬∃𝑥 𝐴(𝑥) ⇔ ∀𝑥 ¬𝐴(𝑥) (Quantor kippen, ¬ nach innen)
+- ∀ verträgt sich mit ∧, ∃ verträgt sich mit ∨ (aufteilen erlaubt)
+- **Reihenfolge zählt**: ∀𝑦 ∃𝑥 (𝑥 = 𝑦) ist wahr, ∃𝑥 ∀𝑦 (𝑥 = 𝑦) ist falsch
+
+### Mengen
+
+| Symbol | Name | Definition / Bedeutung | Logik dahinter |
+| --- | --- | --- | --- |
+| 𝑥 ∈ 𝐴 / 𝑥 ∉ 𝐴 | Element / kein Element | 𝑥 ist (nicht) in 𝐴 | — |
+| ∅ | leere Menge | Menge ohne Elemente (es gibt genau eine) | ∀𝑥 (𝑥 ∉ ∅) |
+| 𝐴 = 𝐵 | Gleichheit (Extensionalität) | gleiche Elemente | ∀𝑥 (𝑥 ∈ 𝐴 ⇔ 𝑥 ∈ 𝐵) |
+| 𝐴 ⊆ 𝐵 | Teilmenge | alle Elemente von 𝐴 sind in 𝐵 | ∀𝑥 (𝑥 ∈ 𝐴 ⇒ 𝑥 ∈ 𝐵) |
+| 𝐴 ⊂ 𝐵 | echte Teilmenge | 𝐴 ⊆ 𝐵 und 𝐴 ≠ 𝐵 | — |
+| {𝑥 ∈ 𝐴 ∣ 𝐸(𝑥)} | Aussonderung | alle 𝑥 aus 𝐴 mit Eigenschaft 𝐸 | 𝑎 ∈ … :⇔ 𝑎 ∈ 𝐴 ∧ 𝐸(𝑎) |
+| {𝑡(𝑥) ∣ 𝑥 ∈ 𝐴} | Ersetzung | 𝑡 auf jedes 𝑥 ∈ 𝐴 anwenden | 𝑎 ∈ … ⇔ ∃𝑥 ∈ 𝐴 (𝑎 = 𝑡(𝑥)) |
+| 𝐴 ∪ 𝐵 | Vereinigung | in 𝐴 **oder** 𝐵 | 𝑥 ∈ 𝐴 ∨ 𝑥 ∈ 𝐵 |
+| 𝐴 ∩ 𝐵 | Schnittmenge | in 𝐴 **und** 𝐵 | 𝑥 ∈ 𝐴 ∧ 𝑥 ∈ 𝐵 |
+| 𝐴 \ 𝐵 | Differenz ("𝐴 ohne 𝐵") | in 𝐴, aber nicht in 𝐵 | 𝑥 ∈ 𝐴 ∧ 𝑥 ∉ 𝐵 |
+| ⋃_{𝐴∈𝑀} 𝐴 | beliebige Vereinigung | in **mindestens einer** Menge aus 𝑀 | ∃𝐴 ∈ 𝑀 (𝑥 ∈ 𝐴) |
+| ⋂_{𝐴∈𝑀} 𝐴 | beliebiger Schnitt (𝑀 ≠ ∅) | in **allen** Mengen aus 𝑀 | ∀𝐴 ∈ 𝑀 (𝑥 ∈ 𝐴) |
+| 𝐴 ∩ 𝐵 = ∅ | disjunkt | keine gemeinsamen Elemente | — |
+
+### Gesetze (gelten für Logik und Mengen gleich)
+
+| Gesetz            | Logik                                  | Mengen                                     |
+| ----------------- | -------------------------------------- | ------------------------------------------ |
+| Idempotenz        | 𝐴 ∧ 𝐴 ⇔ 𝐴, 𝐴 ∨ 𝐴 ⇔ 𝐴             | 𝐴 ∩ 𝐴 = 𝐴, 𝐴 ∪ 𝐴 = 𝐴                 |
+| Kommutativität    | 𝐴 ∧ 𝐵 ⇔ 𝐵 ∧ 𝐴                      | 𝐴 ∩ 𝐵 = 𝐵 ∩ 𝐴 (analog ∪)               |
+| Assoziativität    | 𝐴 ∧ (𝐵 ∧ 𝐶) ⇔ (𝐴 ∧ 𝐵) ∧ 𝐶        | 𝐴 ∩ (𝐵 ∩ 𝐶) = (𝐴 ∩ 𝐵) ∩ 𝐶 (analog ∪) |
+| Distributivität   | 𝐴 ∧ (𝐵 ∨ 𝐶) ⇔ (𝐴 ∧ 𝐵) ∨ (𝐴 ∧ 𝐶) | 𝐴 ∩ (𝐵 ∪ 𝐶) = (𝐴 ∩ 𝐵) ∪ (𝐴 ∩ 𝐶)     |
+|                   | 𝐴 ∨ (𝐵 ∧ 𝐶) ⇔ (𝐴 ∨ 𝐵) ∧ (𝐴 ∨ 𝐶) | 𝐴 ∪ (𝐵 ∩ 𝐶) = (𝐴 ∪ 𝐵) ∩ (𝐴 ∪ 𝐶)     |
+| De Morgan         | ¬(𝐴 ∧ 𝐵) ⇔ ¬𝐴 ∨ ¬𝐵                 | 𝐶 \ (𝐴 ∩ 𝐵) = (𝐶 \ 𝐴) ∪ (𝐶 \ 𝐵)     |
+|                   | ¬(𝐴 ∨ 𝐵) ⇔ ¬𝐴 ∧ ¬𝐵                 | 𝐶 \ (𝐴 ∪ 𝐵) = (𝐶 \ 𝐴) ∩ (𝐶 \ 𝐵)     |
+| Doppelte Negation | ¬¬𝐴 ⇔ 𝐴                              | —                                          |
+| Kontraposition    | (𝐴 ⇒ 𝐵) ⇔ (¬𝐵 ⇒ ¬𝐴)                | —                                          |
+| Transitivität     | (𝐴 ⇒ 𝐵) ∧ (𝐵 ⇒ 𝐶) ⇒ (𝐴 ⇒ 𝐶)      | 𝐴 ⊆ 𝐵 ∧ 𝐵 ⊆ 𝐶 ⇒ 𝐴 ⊆ 𝐶                |
+| Modus Ponens      | aus 𝐴 und 𝐴 ⇒ 𝐵 folgt 𝐵            | —                                          |
+
+> [!tip] De Morgan in einem Satz
+> Negation nach innen ziehen und dabei ∧ ↔ ∨ (bzw. ∀ ↔ ∃, ∩ ↔ ∪) vertauschen.
+
+### Zahlen & Operatoren
+
+| Symbol | Bedeutung |
+| --- | --- |
+| ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ | natürliche (inkl. 0) ⊂ ganze ⊂ rationale ⊂ reelle Zahlen |
+| ∑_{𝑖=𝑘}^{𝑛} 𝑥ᵢ | Summe (for-loop mit +), leer = 0 |
+| ∏_{𝑖=𝑘}^{𝑛} 𝑥ᵢ | Produkt (for-loop mit ·), leer = 1 |
+| (𝑧₁…𝑧ₙ)_𝑏 | Numeral zur Basis 𝑏: ∑ 𝑧ᵢ · 𝑏^(𝑛−𝑖) |
+
 ## Organisatorisch
 
 > [!warning] Semesterendprüfung (SEP)
@@ -21,7 +102,7 @@
 
 | Menge | Symbol | Bedeutung | Beispiel |
 | --- | --- | --- | --- |
-| Natürliche Zahlen | ℕ | ganze, nicht-negative Zahlen | 1, 2, 3, … |
+| Natürliche Zahlen | ℕ | ganze, nicht-negative Zahlen (inkl. 0) | 0, 1, 2, 3, … |
 | Ganze Zahlen | ℤ | ganze, positive & negative Zahlen | -1, 0, 1, 2, … |
 | Rationale Zahlen | ℚ | Zahlen, die als Bruch dargestellt werden können | 1/3 |
 | Reelle Zahlen | ℝ | Dezimalzahlen | 0.333…, π |
@@ -255,4 +336,266 @@ Aus bestehenden Prädikaten (Aussagen) lassen sich durch sinnvolles Verknüpfen 
 > ```
 > A ∧ (B ∨ C)  ⇔  (A ∧ B) ∨ (A ∧ C)
 > A ∨ (B ∧ C)  ⇔  (A ∨ B) ∧ (A ∨ C)
+> ```
+
+## Quantoren
+
+Quantoren formalisieren Aussagen wie "für alle 𝑥 gilt …" oder "es gibt ein 𝑥 mit …".
+
+> [!note] Definition (Quantoren)
+> - ∀𝑥 𝐴(𝑥): Für **alle** (möglichen Werte) 𝑥 gilt 𝐴(𝑥) — **Allquantor**
+> - ∃𝑥 𝐴(𝑥): Es **existiert** ein (Wert) 𝑥 mit 𝐴(𝑥) — **Existenzquantor**
+>
+> Mehrere gleichartige Quantoren kürzt man ab: ∀𝑥∀𝑦(…) = ∀𝑥,𝑦(…), ∃𝑥∃𝑦(…) = ∃𝑥,𝑦(…).
+
+> [!example] Beispiele
+> ```
+> ∃x (x = 2)        wahr   (x = 2 existiert)
+> ∀x (x = 2)        falsch (nicht alles ist 2)
+> ∀y ∃x (x = y)     wahr   (zu jedem y gibt es ein x, nämlich y selbst)
+> ∃x ∀y (x = y)     falsch (kein x ist gleich allen y)
+> ```
+> → Die **Reihenfolge** verschiedener Quantoren ist entscheidend.
+
+### Eingeschränkte Quantoren
+
+> [!note] Definition
+> Es sei 𝑀 eine Menge und 𝐴(𝑥) ein Prädikat:
+> ```
+> ∃x ∈ M A(x)  :⇔  ∃x (x ∈ M ∧ A(x))
+> ∀x ∈ M A(x)  :⇔  ∀x (x ∈ M ⇒ A(x))
+> ```
+
+> [!warning] Nicht verwechseln
+> In der **Definition** steht bei ∃ ein ∧ und bei ∀ ein ⇒. Ausgeschrieben über eine endliche Menge wird aber ∀ zu einer **Und**- und ∃ zu einer **Oder**-Kette:
+> ```
+> M = {a, b, c}
+> ∀x ∈ M A(x)  ⇔  A(a) ∧ A(b) ∧ A(c)
+> ∃x ∈ M A(x)  ⇔  A(a) ∨ A(b) ∨ A(c)
+> ```
+
+Quantoren wirken also wie Junktoren, die (möglicherweise **unendlich**) viele Prädikate verknüpfen. Genau deshalb braucht man sie: eine unendliche Menge lässt sich nicht mit endlich vielen ∧/∨ ausschreiben.
+
+### Quantoren und Junktoren
+
+> [!tip] Regeln
+> ```
+> ¬∀x A(x)            ⇔  ∃x ¬A(x)
+> ¬∃x A(x)            ⇔  ∀x ¬A(x)
+> ∀x (A(x) ∧ B(x))    ⇔  (∀x A(x)) ∧ (∀x B(x))
+> ∃x (A(x) ∨ B(x))    ⇔  (∃x A(x)) ∨ (∃x B(x))
+> ```
+> "Nicht alle 𝑥 erfüllen 𝐴" heisst: es existiert ein 𝑥, das 𝐴 **nicht** erfüllt (De Morgan für Quantoren).
+
+### Leere Quantoren
+
+Quantoren über eine Variable, die im Prädikat gar nicht vorkommt, kann man weglassen. Ist 𝐵 ein Prädikat ohne 𝑥:
+
+```
+∀x B             ⇔  B
+∃x B             ⇔  B
+∀x (A(x) ∧ B)    ⇔  (∀x A(x)) ∧ B
+∃x (A(x) ∧ B)    ⇔  (∃x A(x)) ∧ B
+```
+
+> [!example] Anzahlen ausdrücken: "genau ein 𝑥 erfüllt 𝐵"
+> ```
+> ∃x B(x)  ∧  ¬(∃x,y (B(x) ∧ B(y) ∧ x ≠ y))
+> └ Anzahl ≥ 1 ┘   └──── nicht (Anzahl ≥ 2) ────┘
+> ```
+
+## Mengen
+
+### Mengen und Elemente
+
+- Mengen sind der primitive Datentyp der Mathematik: sie fassen mathematische Objekte (die **Elemente**) zu einem neuen Ganzen zusammen.
+- 𝑦 ∈ 𝑋: 𝑦 ist Element von 𝑋. 𝑦 ∉ 𝑋: 𝑦 ist kein Element von 𝑋.
+- Mengen können beliebige Objekte enthalten, auch andere Mengen — aber **keine Menge enthält sich selbst**.
+- Konvention: Mengen mit Grossbuchstaben, Elemente mit Kleinbuchstaben (wenn möglich).
+- Endliche Mengen schreibt man mit geschweiften Klammern: {1, 2, 3}.
+
+### Extensionalität
+
+> [!note] Extensionalitätsprinzip
+> Zwei Mengen sind genau dann gleich, wenn sie die gleichen Elemente enthalten:
+> ```
+> A = B  ⇔  ∀x (x ∈ A ⇔ x ∈ B)
+> ```
+
+- Mengen haben **keine Reihenfolge** und **keine Duplikate**: {1, 2} = {2, 1} = {1, 2, 2}. (Listen erfüllen das nicht.)
+- Daraus folgt: es gibt nur **eine einzige** leere Menge ∅.
+
+### Teilmengen
+
+> [!note] Definition (Teilmenge)
+> 𝐴 ist **Teilmenge** von 𝐵 (𝐴 ⊆ 𝐵), falls alle Elemente von 𝐴 auch Elemente von 𝐵 sind:
+> ```
+> A ⊆ B  ⇔  ∀x (x ∈ A ⇒ x ∈ B)
+> ```
+> Gilt zusätzlich 𝐴 ≠ 𝐵, ist 𝐴 eine **echte** Teilmenge: 𝐴 ⊂ 𝐵.
+
+> [!tip] Extensionalität mit Teilmengen
+> ```
+> A = B  ⇔  A ⊆ B ∧ B ⊆ A
+> ```
+> So beweist man Mengengleichheit: beide Richtungen zeigen.
+
+> [!example] Beweis: Es gibt nur eine leere Menge
+> - Für jede Menge 𝐴 gilt ∅ ⊆ 𝐴, denn ∀𝑥 (𝑥 ∈ ∅ ⇒ 𝑥 ∈ 𝐴) ist wahr — die Prämisse 𝑥 ∈ ∅ ist immer falsch, also ist die Implikation immer wahr.
+> - Wären ∅₁ und ∅₂ beide leer, dann gilt ∅₁ ⊆ ∅₂ und ∅₂ ⊆ ∅₁, also ∅₁ = ∅₂.
+
+## Aussonderung und Ersetzung
+
+### Aussonderungsprinzip
+
+Aus einer Menge 𝐴 die Elemente mit einer Eigenschaft 𝐸(𝑥) herausfiltern (wie `filter`):
+
+> [!note] Notation (Aussonderung)
+> ```
+> a ∈ {x ∈ A | E(x)}  :⇔  a ∈ A ∧ E(a)
+> ```
+
+> [!example] Beispiel
+> ```
+> G = {x ∈ ℕ | "x ist gerade"}
+>   = {x ∈ ℕ | ∃y ∈ ℕ (x = 2y)}
+> ```
+
+> [!example] Übung: ∅ durch Aussonderung beschreiben
+> ```
+> ∅ = {x ∈ A | x ≠ x}      (für eine beliebige Menge A)
+> ```
+
+### Ersetzungsprinzip
+
+Auf jedes Element 𝑥 ∈ 𝐴 einen Ausdruck 𝑡(𝑥) anwenden (wie `map`):
+
+> [!note] Notation (Ersetzung)
+> ```
+> a ∈ {t(x) | x ∈ A}  ⇔  ∃x ∈ A (a = t(x))
+> ```
+
+> [!example] Beispiele
+> ```
+> {x² | x ∈ ℕ}                        Quadratzahlen
+> {2x + 1 | x ∈ ℕ}                    ungerade natürliche Zahlen
+> {a/b | a ∈ ℤ, b ∈ ℤ, b ≠ 0}         rationale Zahlen ℚ
+> {{x ∈ ℕ | x < y} | y ∈ ℕ}           "Anfangsabschnitte" von ℕ
+>   = {∅, {0}, {0,1}, {0,1,2}, …}      (Menge von Mengen)
+> ```
+
+> [!example] Übung: natürliche Zahlen ≠ 1, die keine Primzahlen sind
+> ```
+> {xy | x, y ∈ ℕ ∧ x ≠ 1 ∧ y ≠ 1}
+> ```
+
+## Vereinigung, Schnitt und Differenz
+
+> [!tip] Merkregel
+> | | endlich viele Mengen | beliebig viele Mengen |
+> | --- | --- | --- |
+> | Vereinigung ∪ | Oder (∨) | Existenzquantor (∃) |
+> | Schnitt ∩ | Und (∧) | Allquantor (∀) |
+
+### Vereinigung
+
+> [!note] Definition (endliche Vereinigung)
+> Die **Vereinigung** enthält genau die Elemente, die in mindestens einer der Mengen sind:
+> ```
+> A ∪ B              := {x | x ∈ A ∨ x ∈ B}
+> A₁ ∪ A₂ ∪ … ∪ Aₙ   := {x | x ∈ A₁ ∨ x ∈ A₂ ∨ … ∨ x ∈ Aₙ}
+> ```
+
+> [!note] Definition (beliebige Vereinigung)
+> Es sei 𝑀 eine beliebige Menge (von Mengen):
+> ```
+> ⋃_{A∈M} A  := {x | ∃A ∈ M (x ∈ A)}
+> ```
+> Indexiert (𝑀 = {𝐴ᵢ ∣ 𝑖 ∈ 𝐼}): ⋃_{𝑖∈𝐼} 𝐴ᵢ = {𝑥 ∣ ∃𝑖 ∈ 𝐼 (𝑥 ∈ 𝐴ᵢ)}
+
+> [!example] Beispiele
+> ```
+> {1,2,3} ∪ {2,3,4,5} = {1,2,3,4,5}
+> ℤ = {−n | n ∈ ℕ} ∪ ℕ
+> ℕ = {2n | n ∈ ℕ} ∪ {2n+1 | n ∈ ℕ}
+>
+> Aᵢ := {i, −i}  (z.B. A₀ = {0}, A₃ = {−3, 3})
+> ⋃_{i∈ℕ} Aᵢ = ℤ     (jedes z ∈ ℤ liegt in A_|z|)
+> ```
+
+> [!tip] Eigenschaften von ∪
+> - Idempotenz: 𝐴 ∪ 𝐴 = 𝐴
+> - Kommutativität: 𝐴 ∪ 𝐵 = 𝐵 ∪ 𝐴
+> - Assoziativität: 𝐴 ∪ (𝐵 ∪ 𝐶) = (𝐴 ∪ 𝐵) ∪ 𝐶
+> - 𝐴 ⊆ 𝐴 ∪ 𝐵
+> - 𝐴 ⊆ 𝐵 ⇔ 𝐵 = 𝐴 ∪ 𝐵
+
+### Schnittmenge
+
+> [!note] Definition (endliche Schnittmenge)
+> Die **Schnittmenge** enthält genau die Elemente, die in allen Mengen sind:
+> ```
+> A ∩ B              := {x | x ∈ A ∧ x ∈ B}
+> A₁ ∩ A₂ ∩ … ∩ Aₙ   := {x | x ∈ A₁ ∧ x ∈ A₂ ∧ … ∧ x ∈ Aₙ}
+> ```
+
+> [!note] Definition (beliebige Schnittmenge)
+> Es sei 𝑀 eine **nichtleere** Menge (von Mengen):
+> ```
+> ⋂_{A∈M} A  := {x | ∀A ∈ M (x ∈ A)}
+> ```
+> Indexiert: ⋂_{𝑖∈𝐼} 𝐴ᵢ = {𝑥 ∣ ∀𝑖 ∈ 𝐼 (𝑥 ∈ 𝐴ᵢ)}
+
+> [!example] Beispiele
+> ```
+> {1,2,3} ∩ {2,3,4,5} = {2,3}
+> ℕ = {r ∈ ℝ | r ≥ 0} ∩ ℤ
+> ∅ = {2n | n ∈ ℕ} ∩ {2n+1 | n ∈ ℕ}
+>
+> Aᵢ := {0, …, i}             ⋂_{i∈ℕ} Aᵢ = {0}
+> Aᵢ := {n ∈ ℕ | n ≠ 2i}      ⋂_{i∈ℕ} Aᵢ = {2n+1 | n ∈ ℕ}
+> ```
+
+> [!tip] Eigenschaften von ∩
+> - Idempotenz: 𝐴 ∩ 𝐴 = 𝐴
+> - Kommutativität: 𝐴 ∩ 𝐵 = 𝐵 ∩ 𝐴
+> - Assoziativität: 𝐴 ∩ (𝐵 ∩ 𝐶) = (𝐴 ∩ 𝐵) ∩ 𝐶
+> - 𝐴 ∩ 𝐵 ⊆ 𝐴
+> - 𝐴 ⊆ 𝐵 ⇔ 𝐴 ∩ 𝐵 = 𝐴
+
+### Disjunkte Mengen
+
+> [!note] Definition (disjunkt)
+> - 𝐴 und 𝐵 heissen **disjunkt**, wenn 𝐴 ∩ 𝐵 = ∅ (keine gemeinsamen Elemente).
+> - 𝑀 = {𝐴ᵢ ∣ 𝑖 ∈ 𝐼} heisst **paarweise disjunkt**, wenn aus 𝑖 ≠ 𝑗 stets 𝐴ᵢ ∩ 𝐴ⱼ = ∅ folgt.
+
+> [!warning] Achtung
+> {1,2}, {2,3}, {4,5} sind **nicht** paarweise disjunkt, obwohl {1,2} ∩ {2,3} ∩ {4,5} = ∅ gilt.
+>
+> 𝑀 ist genau dann paarweise disjunkt, wenn jedes 𝑥 ∈ ⋃_{𝑖∈𝐼} 𝐴ᵢ in **genau einem** 𝐴ᵢ liegt.
+
+### Differenzmenge
+
+> [!note] Definition (Differenz)
+> ```
+> A \ B := {x ∈ A | x ∉ B}      ("A ohne B")
+> ```
+> Alles aus 𝐴, das nicht in 𝐵 ist — also auch ohne den gemeinsamen Teil 𝐴 ∩ 𝐵.
+
+> [!example] Beispiele
+> ```
+> ℤ \ ℕ = {k ∈ ℤ | k < 0}
+> ℚ \ ℝ = ∅
+> ℕ \ {2n | n ∈ ℕ} = {2n+1 | n ∈ ℕ}
+> ```
+
+### Interaktion von ∩, ∪ und \
+
+> [!tip] Satz
+> Die Identitäten folgen direkt aus den entsprechenden logischen Äquivalenzen:
+> ```
+> De Morgan:        C \ (A ∩ B) = (C \ A) ∪ (C \ B)
+> De Morgan:        C \ (A ∪ B) = (C \ A) ∩ (C \ B)
+> Distributivität:  A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+> Distributivität:  A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
 > ```

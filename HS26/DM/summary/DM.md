@@ -40,21 +40,21 @@
 
 ### Mengen
 
-| Symbol | Name | Definition / Bedeutung | Logik dahinter |
-| --- | --- | --- | --- |
-| 𝑥 ∈ 𝐴 / 𝑥 ∉ 𝐴 | Element / kein Element | 𝑥 ist (nicht) in 𝐴 | — |
-| ∅ | leere Menge | Menge ohne Elemente (es gibt genau eine) | ∀𝑥 (𝑥 ∉ ∅) |
-| 𝐴 = 𝐵 | Gleichheit (Extensionalität) | gleiche Elemente | ∀𝑥 (𝑥 ∈ 𝐴 ⇔ 𝑥 ∈ 𝐵) |
-| 𝐴 ⊆ 𝐵 | Teilmenge | alle Elemente von 𝐴 sind in 𝐵 | ∀𝑥 (𝑥 ∈ 𝐴 ⇒ 𝑥 ∈ 𝐵) |
-| 𝐴 ⊂ 𝐵 | echte Teilmenge | 𝐴 ⊆ 𝐵 und 𝐴 ≠ 𝐵 | — |
-| {𝑥 ∈ 𝐴 ∣ 𝐸(𝑥)} | Aussonderung | alle 𝑥 aus 𝐴 mit Eigenschaft 𝐸 | 𝑎 ∈ … :⇔ 𝑎 ∈ 𝐴 ∧ 𝐸(𝑎) |
-| {𝑡(𝑥) ∣ 𝑥 ∈ 𝐴} | Ersetzung | 𝑡 auf jedes 𝑥 ∈ 𝐴 anwenden | 𝑎 ∈ … ⇔ ∃𝑥 ∈ 𝐴 (𝑎 = 𝑡(𝑥)) |
-| 𝐴 ∪ 𝐵 | Vereinigung | in 𝐴 **oder** 𝐵 | 𝑥 ∈ 𝐴 ∨ 𝑥 ∈ 𝐵 |
-| 𝐴 ∩ 𝐵 | Schnittmenge | in 𝐴 **und** 𝐵 | 𝑥 ∈ 𝐴 ∧ 𝑥 ∈ 𝐵 |
-| 𝐴 \ 𝐵 | Differenz ("𝐴 ohne 𝐵") | in 𝐴, aber nicht in 𝐵 | 𝑥 ∈ 𝐴 ∧ 𝑥 ∉ 𝐵 |
-| ⋃_{𝐴∈𝑀} 𝐴 | beliebige Vereinigung | in **mindestens einer** Menge aus 𝑀 | ∃𝐴 ∈ 𝑀 (𝑥 ∈ 𝐴) |
-| ⋂_{𝐴∈𝑀} 𝐴 | beliebiger Schnitt (𝑀 ≠ ∅) | in **allen** Mengen aus 𝑀 | ∀𝐴 ∈ 𝑀 (𝑥 ∈ 𝐴) |
-| 𝐴 ∩ 𝐵 = ∅ | disjunkt | keine gemeinsamen Elemente | — |
+| Symbol             | Name                         | Definition / Bedeutung                   | Logik dahinter                  |
+| ------------------ | ---------------------------- | ---------------------------------------- | ------------------------------- |
+| 𝑥 ∈ 𝐴 / 𝑥 ∉ 𝐴  | Element / kein Element       | 𝑥 ist (nicht) in 𝐴                     | —                               |
+| ∅                  | leere Menge                  | Menge ohne Elemente (es gibt genau eine) | ∀𝑥 (𝑥 ∉ ∅)                    |
+| 𝐴 = 𝐵            | Gleichheit (Extensionalität) | gleiche Elemente                         | ∀𝑥 (𝑥 ∈ 𝐴 ⇔ 𝑥 ∈ 𝐵)         |
+| 𝐴 ⊆ 𝐵            | Teilmenge                    | alle Elemente von 𝐴 sind in 𝐵          | ∀𝑥 (𝑥 ∈ 𝐴 ⇒ 𝑥 ∈ 𝐵)         |
+| 𝐴 ⊂ 𝐵            | echte Teilmenge              | 𝐴 ⊆ 𝐵 und 𝐴 ≠ 𝐵                      | —                               |
+| {𝑥 ∈ 𝐴 ∣ 𝐸(𝑥)} | Aussonderung                 | alle 𝑥 aus 𝐴 mit Eigenschaft 𝐸        | 𝑎 ∈ … :⇔ 𝑎 ∈ 𝐴 ∧ 𝐸(𝑎)      |
+| {𝑡(𝑥) ∣ 𝑥 ∈ 𝐴} | Ersetzung                    | 𝑡 auf jedes 𝑥 ∈ 𝐴 anwenden            | 𝑎 ∈ … ⇔ ∃𝑥 ∈ 𝐴 (𝑎 = 𝑡(𝑥)) |
+| 𝐴 ∪ 𝐵            | Vereinigung                  | in 𝐴 **oder** 𝐵                        | 𝑥 ∈ 𝐴 ∨ 𝑥 ∈ 𝐵               |
+| 𝐴 ∩ 𝐵            | Schnittmenge                 | in 𝐴 **und** 𝐵                         | 𝑥 ∈ 𝐴 ∧ 𝑥 ∈ 𝐵               |
+| 𝐴 \ 𝐵            | Differenz ("𝐴 ohne 𝐵")     | in 𝐴, aber nicht in 𝐵                  | 𝑥 ∈ 𝐴 ∧ 𝑥 ∉ 𝐵               |
+| ⋃_{𝐴∈𝑀} 𝐴       | beliebige Vereinigung        | in **mindestens einer** Menge aus 𝑀     | ∃𝐴 ∈ 𝑀 (𝑥 ∈ 𝐴)              |
+| ⋂_{𝐴∈𝑀} 𝐴       | beliebiger Schnitt (𝑀 ≠ ∅)  | in **allen** Mengen aus 𝑀               | ∀𝐴 ∈ 𝑀 (𝑥 ∈ 𝐴)              |
+| 𝐴 ∩ 𝐵 = ∅        | disjunkt                     | keine gemeinsamen Elemente               | —                               |
 
 ### Gesetze (gelten für Logik und Mengen gleich)
 
